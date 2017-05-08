@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">snapask</string>
+    <string name="action_settings">Start !</string>
+
+    <!--activity transition-->
+    <string name="transition_name">image</string>
+
+    <string name="photo_url">PHOTO</string>
+
+</resources>
