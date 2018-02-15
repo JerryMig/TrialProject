@@ -8,4 +8,11 @@
     <color name="black">#000000</color>
     <color name="light_gray">#D3D3D3</color>
     <color name="translucent">#80000000</color>
+
+    <color name="selected_comment_background">#ffffffff</color>
+    <color name="designer_news_story_comment_background">@android:color/transparent</color>
+
+    <!--shimmer looks-->
+    <color name="demo_light_transparent">#16000000</color>
+    <color name="demo_dark_transparent">#24000000</color>
 </resources>

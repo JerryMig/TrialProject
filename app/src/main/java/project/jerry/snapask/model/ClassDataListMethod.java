@@ -33,7 +33,8 @@ public class ClassDataListMethod extends BaseDataListMethod<List<ClassData>> {
     @Override
     public List<ClassData> requestData() {
         if (mDataList == null || mDataList.isEmpty()) {
-            requestApiData();
+//            requestApiData();
+            notifyUIUpdate();
         }
         return mDataList;
     }

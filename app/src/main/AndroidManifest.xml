@@ -26,7 +26,12 @@
             android:name=".controller.activity.DetailActivity"
             android:label="@string/app_name"
             android:screenOrientation="nosensor"
-            android:theme="@style/Theme.Translucent"/>
+            android:theme="@style/Theme.Translucent" />
+        <activity
+            android:name=".controller.activity.ToggleActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="nosensor"
+            android:theme="@style/Theme.Translucent" />
     </application>
 
 </manifest>

@@ -8,12 +8,17 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import project.jerry.snapask.R;
 import project.jerry.snapask.controller.activity.LauncherActivity;
 import project.jerry.snapask.model.ClassDataListMethod;
 import project.jerry.snapask.model.DataListFactory;
+import project.jerry.snapask.model.data.ClassData;
 import project.jerry.snapask.util.RefreshUIListener;
 import project.jerry.snapask.view.ClassViewAdapter;
+import project.jerry.snapask.view.ScrollItemAnimator;
 import project.jerry.snapask.view.VerticalSpaceDecor;
 
 /**
@@ -33,8 +38,10 @@ public class ClassViewFragment extends BaseRecyclerViewFragment {
                 @Override
                 public void run() {
                     if (mAdapter != null && ensureMethod()) {
-                        mAdapter.refreshData(mMethod.getDataFromDb());
-                        mAdapter.notifyDataSetChanged();
+                        List<ClassData> dataList= mMethod.getDataFromDb();
+                        ArrayList<ClassData> duplicates = new ArrayList<ClassData>(dataList);
+                        duplicates.addAll(dataList);
+                        mAdapter.refreshData(duplicates);
                     }
                 }
             });
@@ -70,7 +77,7 @@ public class ClassViewFragment extends BaseRecyclerViewFragment {
     }
 
     private void initMethod() {
-        mMethod = (ClassDataListMethod) DataListFactory.getInstance(mContext)
+        mMethod = (ClassDataListMethod) DataListFactory.getInstance(mContext.getApplicationContext())
                 .getDataMethod(DataListFactory.DataType.CLASS, mRefreshListener);
     }
 

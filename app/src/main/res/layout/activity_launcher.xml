@@ -2,6 +2,7 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
@@ -27,5 +28,17 @@
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize"
         android:background="@color/light_gray"/>
+
+    <ImageView
+        android:id="@+id/toggle_view"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:visibility="gone"
+        android:layout_marginEnd="@dimen/normal_margin"
+        android:transitionName="@string/transition_name_toggle"
+        android:clickable="true"
+        android:stateListAnimator="@animator/animator_item_raise"
+        android:src="@mipmap/ic_launcher"/>
 
 </android.support.design.widget.CoordinatorLayout>

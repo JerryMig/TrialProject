@@ -7,4 +7,6 @@
 
     <string name="photo_url">PHOTO</string>
 
+    <string name="transition_name_toggle">toggle</string>
+
 </resources>
